@@ -2,7 +2,7 @@
 using MySql.Data.MySqlClient;
 using ProjectExerc.Models;
 
-namespace ProjetoEcommerce.Repositorio
+namespace ProjectExerc.Repositorio
 {
     public class ProdutoRepositorio(IConfiguration configuration)
     {

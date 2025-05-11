@@ -4,7 +4,7 @@ using ProjectExerc.Models;
 
 namespace ProjectExerc.Repositorio
 {
-    public class UsuarioRepositorio (IConfiguration configuration)
+    public class LoginRepositorio (IConfiguration configuration)
     {
         private readonly string _conexaoMySQL = configuration.GetConnectionString("ConexaoMySQL");
 
