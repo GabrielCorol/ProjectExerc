@@ -1,9 +1,15 @@
+using ProjectExerc.Repositorio;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddScoped<ProdutoRepositorio>();
+builder.Services.AddScoped<LoginRepositorio>();
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
