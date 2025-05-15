@@ -14,7 +14,7 @@ namespace ProjectExerc.Controllers
         }
         public IActionResult Index()
         {
-            return View(_produtoRepositorio.TodosProdutos);
+            return View(_produtoRepositorio.TodosProdutos());
         }
         public IActionResult CadastrarProduto()
         {
@@ -24,7 +24,7 @@ namespace ProjectExerc.Controllers
         public IActionResult CadastrarProduto(Produto produto)
         {
             _produtoRepositorio.Cadastrar(produto);
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult EditarProduto(int id)

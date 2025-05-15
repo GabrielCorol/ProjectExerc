@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ProjectExerc.Models;
 using ProjectExerc.Repositorio;
 
 namespace ProjectExerc.Controllers
@@ -23,7 +22,7 @@ namespace ProjectExerc.Controllers
             var login = _loginRepositorio.ObterUsuario(email);
             if(login != null && login.Senha == senha)
             {
-                return RedirectToAction("Index", "Login");
+                return RedirectToAction("Index", "Produto");
             }
             ModelState.AddModelError("", "Email ou senha incorretos!");
             return View();

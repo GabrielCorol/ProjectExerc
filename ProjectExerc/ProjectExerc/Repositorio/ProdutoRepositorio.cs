@@ -57,16 +57,19 @@ namespace ProjectExerc.Repositorio
                 MySqlCommand cmd = new MySqlCommand("Select * from produto", conexao);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
+
                 da.Fill(dt);
                 conexao.Close();
+
                 foreach (DataRow dr in dt.Rows)
                 {
-                    ProdutoList.Add(new Produto
+                    ProdutoList.Add
+                        (new Produto
                     {
                         Id = Convert.ToInt32(dr["Id"]),
                         Nome = ((string)dr["Nome"]),
                         Descricao = ((string)dr["Descricao"]),
-                        Quantidade = ((int)dr["Quantidade"]),
+                        Quantidade = ((string)dr["Quantidade"]),
                         Preco = ((decimal)dr["Preco"]),
                     });
 
@@ -91,7 +94,7 @@ namespace ProjectExerc.Repositorio
                     produto.Id = Convert.ToInt32(dr["Id"]);
                     produto.Nome = (string)(dr["Nome"]);
                     produto.Descricao = (string)(dr["Descricao"]);
-                    produto.Quantidade = Convert.ToInt32(dr["Quantidade"]);
+                    produto.Quantidade = (string)(dr["Quantidade"]);
                     produto.Preco = (decimal)(dr["Preco"]);
                 }
                 return produto;

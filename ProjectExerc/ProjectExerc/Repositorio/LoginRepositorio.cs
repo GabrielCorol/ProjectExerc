@@ -6,14 +6,14 @@ namespace ProjectExerc.Repositorio
 {
     public class LoginRepositorio (IConfiguration configuration)
     {
-        private readonly string _conexaoMySQL = configuration.GetConnectionString("ConexaoMySQL");
+        private readonly string _conexaoMySQL = configuration.GetConnectionString("conexaoMySQL");
 
         public Usuario ObterUsuario(string email)
         {
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new ("Select * from Usuario Where Email = @email", conexao);
+                MySqlCommand cmd = new ("select * from Usuario where Email = @email", conexao);
                 cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = email;
 
                 using (MySqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection))
