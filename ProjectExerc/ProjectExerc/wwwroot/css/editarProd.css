@@ -1,79 +1,77 @@
-﻿.edit_prod {
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center; /* Opcional: Centralizar o título */
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+body {
+    background-color: #1f1f1f;
+    color: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+    padding: 30px;
 }
-
-h4 {
-    color: #6c757d; /* Cor do texto secundário do Bootstrap */
-    margin-bottom: 15px;
-    text-align: center; /* Opcional: Centralizar o subtítulo */
-}
-
-hr {
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
-    border: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Borda mais suave */
+.edit_prod {
+    text-align: center;
+    color: #0a58ca;
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-size: 28px;
 }
 
 .col-md-4 {
-    margin: 0 auto; /* Centralizar o formulário em telas maiores */
-    padding: 20px;
-    border: 1px solid #dee2e6; /* Borda leve no formulário */
-    border-radius: 5px;
-    background-color: #f8f9fa; /* Fundo claro para o formulário */
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* Leve sombra */
+    margin: 0 auto;
+    padding: 25px;
+    border: 1px solid #aaa;
+    background: #f0f0f0;
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 
 .form-group {
-    margin-bottom: 1.5rem; /* Aumentar um pouco o espaçamento entre os campos */
+    margin-bottom: 15px;
 }
 
-.control-label {
-    font-weight: bold;
-    color: #495057; /* Cor do texto principal do Bootstrap */
-}
-
-.form-control {
-    border: 1px solid #ced4da; /* Borda padrão do Bootstrap */
-    border-radius: 0.25rem;
-    padding: 0.5rem 0.75rem;
-    width: 100%;
-    box-sizing: border-box; /* Garantir que padding e border não aumentem a largura */
-}
-
-    .form-control[readonly] {
-        background-color: #e9ecef; /* Cor de fundo para campos somente leitura */
-        opacity: 1; /* Reverter a opacidade padrão para readonly */
+    .form-group label {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 5px;
+        display: block;
     }
 
-.form-text {
-    font-size: 0.8rem;
-    color: #6c757d; /* Cor do texto muted do Bootstrap */
+input.form-control {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 8px 10px;
 }
 
 .text-danger {
-    font-size: 0.9rem;
-    margin-top: 0.25rem;
-}
-
-.btn-primary {
-    width: 100%; /* Ocupar a largura total do container */
-}
-
-.btn-secondary {
-    /* Estilos adicionais para o botão "Voltar" se desejar */
-}
-
-.mt-3 {
-    margin-top: 1.5rem; /* Espaçamento acima do botão "Voltar" */
-    display: block; /* Fazer o botão "Voltar" ocupar a linha inteira */
-    width: 100%; /* Ocupar a largura total */
+    font-size: 13px;
+    color: red;
+    margin-top: 4px;
+    display: block;
 }
 
 .btn {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
 }
+
+    .btn .btn-primary {
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+        padding: 8px 20px;
+        font-weight: bold;
+        border-radius: 6px;
+    }
+
+    .btn .btn-success {
+        background-color: #198754;
+        border-color: #198754;
+        padding: 8px 20px;
+        font-weight: bold;
+        border-radius: 6px;
+    }
+
+    .btn .btn-primary:hover {
+        background-color: #084298;
+    }
+
+    .btn .btn-success:hover {
+        background-color: #146c43;
+    }

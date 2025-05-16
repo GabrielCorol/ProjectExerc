@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<ProjectExerc.Models.Produto>
 
 
-<link href="~/css/listaprod.css" rel="stylesheet" />
+<link href="~/css/listaProd.css" rel="stylesheet" />
 
 <p>
-    <a asp-controller="Produto" asp-action="CadastrarProduto" class="btn btn-primary">Cadastra Produto</a>
+    <a asp-controller="Produto" asp-action="CadastrarProduto" class="btn btn-primary">Cadastrar Produto</a>
 </p>
 <table class="table custom-table">
     <thead>
@@ -17,6 +17,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantidade)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Preco)
@@ -38,6 +41,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Descricao)
                 </td>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Quantidade)
+                </th>
                 <td>
                     @Html.DisplayFor(modelItem => item.Preco)
                 </td>

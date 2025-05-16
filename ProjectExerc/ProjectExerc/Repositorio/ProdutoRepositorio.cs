@@ -13,13 +13,12 @@ namespace ProjectExerc.Repositorio
             using (var conexao = new MySqlConnection(_ConexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("insert into produto(Nome, Descricao, Quantidade, Preco) values(@nome, @descricao, @quantidade, @preco)", conexao);
+                MySqlCommand cmd = new MySqlCommand("insert into Produto(Nome,Descricao,Quantidade,Preco) values(@nome, @descricao, @quantidade, @preco)", conexao);
                 cmd.Parameters.Add("@nome", MySqlDbType.VarChar).Value = produto.Nome;
                 cmd.Parameters.Add("@descricao", MySqlDbType.VarChar).Value = produto.Descricao;
-                cmd.Parameters.Add("@quantidade", MySqlDbType.Int32).Value = produto.Quantidade;
+                cmd.Parameters.Add("@quantidade", MySqlDbType.VarChar).Value = produto.Quantidade;
                 cmd.Parameters.Add("@preco", MySqlDbType.Decimal).Value = produto.Preco;
                 cmd.ExecuteNonQuery();
-                conexao.Close();
             }
         }
 
@@ -31,12 +30,12 @@ namespace ProjectExerc.Repositorio
                 {
                     conexao.Open();
 
-                    MySqlCommand cmd = new MySqlCommand("Update Produto set Nome=@nome, Descricao=@descricao,Quantidade=@quantidade,Preco=@preco " + " where Id=id", conexao);
+                    MySqlCommand cmd = new MySqlCommand("Update Produto set Nome=@nome, Descricao=@descricao,Quantidade=@quantidade,Preco=@preco " + " WHERE Id=@Id", conexao);
                     cmd.Parameters.Add("@Id", MySqlDbType.Int32).Value = produto.Id;
                     cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = produto.Nome;
                     cmd.Parameters.Add("@Descricao", MySqlDbType.VarChar).Value = produto.Descricao;
-                    cmd.Parameters.Add("@quantidade", MySqlDbType.Int32).Value = produto.Quantidade;
-                    cmd.Parameters.Add("@preco", MySqlDbType.Decimal).Value = produto.Preco;
+                    cmd.Parameters.Add("@Quantidade", MySqlDbType.VarChar).Value = produto.Quantidade;
+                    cmd.Parameters.Add("@Preco", MySqlDbType.Decimal).Value = produto.Preco;
                     int linhasAfestadas = cmd.ExecuteNonQuery();
                     return linhasAfestadas > 0;
 
@@ -54,7 +53,7 @@ namespace ProjectExerc.Repositorio
             using (var conexao = new MySqlConnection(_ConexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("Select * from produto", conexao);
+                MySqlCommand cmd = new MySqlCommand("select * from Produto", conexao);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
 
@@ -82,7 +81,7 @@ namespace ProjectExerc.Repositorio
             using (var conexao = new MySqlConnection(_ConexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT * from produto where Id=@id ", conexao);
+                MySqlCommand cmd = new MySqlCommand("SELECT * from Produto where Id=@id ", conexao);
                 cmd.Parameters.AddWithValue("@Id", Id);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 MySqlDataReader dr;
@@ -105,7 +104,7 @@ namespace ProjectExerc.Repositorio
             using (var conexao = new MySqlConnection(_ConexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("delete from produto where Id=@id", conexao);
+                MySqlCommand cmd = new MySqlCommand("delete from Produto where Id=@id", conexao);
                 cmd.Parameters.AddWithValue("@Id", Id);
                 int i = cmd.ExecuteNonQuery();
                 conexao.Close();

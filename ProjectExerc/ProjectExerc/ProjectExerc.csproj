@@ -7,7 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\video\**" />
+    <Content Remove="wwwroot\video\**" />
+    <EmbeddedResource Remove="wwwroot\video\**" />
+    <None Remove="wwwroot\video\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MySql.Data" Version="9.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\video2\" />
   </ItemGroup>
 
 </Project>

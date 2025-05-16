@@ -30,7 +30,7 @@ namespace ProjectExerc.Controllers
         public IActionResult EditarProduto(int id)
         {
             var produto = _produtoRepositorio.ObterProduto(id);
-            if (produto != null)
+            if (produto == null)
             {
                 return NotFound();
             }

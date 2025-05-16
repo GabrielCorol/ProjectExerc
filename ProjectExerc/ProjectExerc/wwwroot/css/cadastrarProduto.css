@@ -1,27 +1,85 @@
-﻿.titulo-prod {
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    background-color: #1f1f1f;
+    color: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+    padding: 30px;
+}
+.titulo-prod {
     text-align: center;
-    color: blue;
-    margin-bottom: 20px;
+    color: #0d6efd; /* Azul Bootstrap */
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 2.5rem;
+    font-family: 'Poppins', sans-serif;
 }
 
 .col-md-4 {
     margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #555;
-    background: #808080;
-    box-shadow: 1px 3px #333;
+    padding: 30px;
+    background-color: #f8f9fa; /* Cinza claro suave */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
 }
 
 .form-group {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px 10px;
-    width: 100%;
-    box-sizing: border-box;
+    margin-bottom: 20px;
 }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #212529;
+    }
+
+    .form-group input.form-control {
+        width: 100%;
+        padding: 10px 14px;
+        border: 1.5px solid #ced4da;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .form-group input.form-control:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 8px rgba(13, 110, 253, 0.5);
+            outline: none;
+        }
 
 .btn {
     display: flex;
     justify-content: center;
-    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
 }
+
+    .btn input[type="submit"],
+    .btn a.btn {
+        background-color: #0d6efd;
+        color: white;
+        padding: 12px 28px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn input[type="submit"]:hover,
+        .btn a.btn:hover {
+            background-color: #084298;
+        }
+
+        .btn a.btn.btn-success {
+            background-color: #198754;
+        }
+
+            .btn a.btn.btn-success:hover {
+                background-color: #135e31;
+            }
